@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CooperativeAppMobile.MAUI.Views.AddMemberWithdrawal"
+                          xmlns:entry="clr-namespace:CooperativeAppMobile.MAUI.Helpers"
+             Title="Queens MPCS"
+             Padding="20"
+         Shell.BackgroundColor="{StaticResource Primary}"
+         Shell.TitleColor="{StaticResource White}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+    <Grid RowDefinitions="auto,*" RowSpacing="15">
+        <Grid x:Name="balance_grid" IsVisible="False" Grid.Row="0" ColumnDefinitions="*,auto">
+            <HorizontalStackLayout Grid.Column="0">
+                <Label Text="Account Balance : "/>
+                <Label Text="" x:Name="lbl_balance" FontAttributes="Bold" FontSize="Subtitle" TextColor="Red"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Grid.Column="1">
+                <Label VerticalOptions="Center" Text="Minimum : "/>
+                <Label VerticalOptions="Center" x:Name="lbl_minimum_balance" Text="$1,000" FontAttributes="Bold" FontSize="Subtitle" TextColor="Red"/>
+            </HorizontalStackLayout>
+        </Grid>
+        <ScrollView Grid.Row="1"
+     VerticalScrollBarVisibility="Never"
+     HorizontalScrollBarVisibility="Never">
+            <Grid>
+                <ActivityIndicator IsRunning="False" WidthRequest="50"
+                     HeightRequest="50" IsVisible="False"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     x:Name="activityInd"/>
+                <VerticalStackLayout
+                    x:Name="body"
+         VerticalOptions="Start"
+         Spacing="20">
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="Search Account/Member"/>
+                            <Label Text="*" TextColor="Red"/>
+                        </HorizontalStackLayout>
+                        <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                            <StackLayout Orientation="Vertical">
+                                <entry:BorderlessEntry
+                                      x:Name="txt_member"
+                                      Text=""
+                                      TextChanged="txt_member_TextChanged"
+                                      Unfocused="txt_member_Unfocused"
+                                      Focused="txt_member_Focused"
+                                   FontSize="Small"
+                                   HorizontalOptions="FillAndExpand"
+                                   PlaceholderColor="DarkGray"
+                                   Placeholder="Search Member by Name/Number"/>
+                                <ListView x:Name="dropdownListView"
+                                            IsVisible="False"
+                                    ItemsSource="{Binding FilteredMembers}"
+                                    MaximumHeightRequest="200"
+                                    SelectionMode="Single"
+                                    ItemSelected="OnItemSelected">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextCell Text="{Binding}" />
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="Account"/>
+                            <Label Text="*" TextColor="Red"/>
+                        </HorizontalStackLayout>
+                        <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                            <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                                <entry:BorderlessPicker
+                               x:Name="drp_account_type"
+                             FontSize="Small"
+                                 SelectedIndexChanged="OnAccountTypeSelected"
+                             HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="Withdrawal Type"/>
+                            <Label Text="*" TextColor="Red"/>
+                        </HorizontalStackLayout>
+                        <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                            <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                                <entry:BorderlessPicker
+                                x:Name="drp_withdrawal_type"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="Withdrawal Reference Description"/>
+                            <Label Text="*" TextColor="Red"/>
+                        </HorizontalStackLayout>
+                        <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                            <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                                <entry:BorderlessEntry
+                                x:Name="txt_withdrawal_reference"
+                                Text=""
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Reference Description"/>
+                            </StackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="Withdrawn Amount"/>
+                            <Label Text="*" TextColor="Red"/>
+                        </HorizontalStackLayout>
+                        <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                            <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                                <entry:BorderlessEntry
+                                x:Name="txt_amount"
+                                Text=""
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Withdrawal Amount"/>
+                            </StackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="Requested Date"/>
+                            <Label Text="*" TextColor="Red"/>
+                        </HorizontalStackLayout>
+                        <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                            <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                                <entry:BorderlessDatePicker
+                                x:Name="drp_requested_date"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <Frame
+               BackgroundColor="{StaticResource Primary}"
+               Padding="20,5">
+                        <Label Text="MANAGEMENT APPROVAL PANEL"
+                         FontSize="Caption"
+                         FontAttributes="Bold"
+                         TextColor="{StaticResource White}"/>
+
+                    </Frame>
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="Approved By (Manager)"/>
+                        </HorizontalStackLayout>
+                        <Frame
+                    BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                    Padding="10,2" CornerRadius="10">
+                            <StackLayout Orientation="Horizontal"
+                          Spacing="20">
+                                <entry:BorderlessPicker
+                                x:Name="drp_approved_by_manager"
+                            FontSize="Small"
+                            HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="Approval Status"/>
+                        </HorizontalStackLayout>
+                        <Frame
+                    BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                    Padding="10,2" CornerRadius="10">
+                            <StackLayout Orientation="Horizontal"
+                          Spacing="20">
+                                <entry:BorderlessPicker
+                                x:Name="drp_approval_status"
+                            FontSize="Small"
+                            HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="Approval Date"/>
+                            <Label Text="*" TextColor="Red"/>
+                        </HorizontalStackLayout>
+                        <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                            <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                                <entry:BorderlessDatePicker
+                                x:Name="drp_approval_date"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout Spacing="5">
+                            <Label Text="Approval Comment"/>
+                        </HorizontalStackLayout>
+                        <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                            <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                                <entry:BorderlessEntry
+                                x:Name="txt_approval_comment"
+                             FontSize="Small"
+                                Text="This is automatically approved comment"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Approval Comment (Optional)"/>
+                            </StackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout 
+                        IsVisible="False"
+                        Spacing="20" x:Name="management_grid">
+                        <Frame
+BackgroundColor="{StaticResource Primary}"
+Padding="20,5">
+                            <Label Text="HOD APPROVAL PANEL"
+          FontSize="Caption"
+          FontAttributes="Bold"
+          TextColor="{StaticResource White}"/>
+
+                        </Frame>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Reviewed By (HOD)"/>
+                            </HorizontalStackLayout>
+                            <Frame
+     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+     Padding="10,2" CornerRadius="10">
+                                <StackLayout Orientation="Horizontal"
+           Spacing="20">
+                                    <entry:BorderlessPicker
+                 x:Name="drp_approved_by_hod"
+             FontSize="Small"
+             HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Review Status"/>
+                            </HorizontalStackLayout>
+                            <Frame
+     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+     Padding="10,2" CornerRadius="10">
+                                <StackLayout Orientation="Horizontal"
+           Spacing="20">
+                                    <entry:BorderlessPicker
+                 x:Name="drp_hod_approval_status"
+             FontSize="Small"
+             HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Review Comment"/>
+                            </HorizontalStackLayout>
+                            <Frame
+      BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+      BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+      Padding="10,2" CornerRadius="10">
+                                <StackLayout Orientation="Horizontal"
+                   Spacing="20">
+                                    <entry:BorderlessEntry
+                 x:Name="txt_hod_approval_comment"
+              FontSize="Small"
+                 Text="This is automatically review comment"
+              HorizontalOptions="FillAndExpand"
+              PlaceholderColor="DarkGray"
+              Placeholder="Review Comment (Optional)"/>
+                                </StackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                    <HorizontalStackLayout
+                     HorizontalOptions="Center"
+                     Margin="0,0,0,0"
+                     Spacing="20">
+                        <Button 
+                          HeightRequest="50"
+                          WidthRequest="120"
+                          CornerRadius="10"
+                          FontSize="Subtitle"
+                          FontAttributes="Bold"
+                          TextColor="{StaticResource White}"
+                          BackgroundColor="{StaticResource Primary}"
+                        x:Name="btn_submit"
+                        Clicked="btn_submit_Clicked"
+                          Text="Submit"/>
+                        <Button 
+                          HeightRequest="50"
+                          WidthRequest="120"
+                          CornerRadius="10"
+                          FontSize="Subtitle"
+                          FontAttributes="Bold"
+                          TextColor="{StaticResource White}"
+                          BackgroundColor="Orange"
+                        x:Name="btn_cancel"
+                        Clicked="btn_cancel_Clicked"
+                          Text="Cancel"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

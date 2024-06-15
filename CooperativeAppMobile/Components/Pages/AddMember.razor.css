@@ -1,0 +1,17 @@
+﻿.req {
+    color: #F00F00;
+}
+
+.form-control {
+    border: 1px solid #e0dbdb !important;
+    padding: 10px !important;
+}
+
+input[Pageid="radio"] {
+    margin-right: 5px;
+}
+
+.modal-open {
+    overflow: hidden;
+}
+

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CooperativeAppMobile.MAUI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:CooperativeAppMobile.MAUI.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Title="CooperativeAppMobile.MAUI">
+
+    <FlyoutItem
+      FlyoutItemIsVisible="False">
+        <Tab>
+            <ShellContent
+            ContentTemplate="{DataTemplate views:Login}"
+            Route="Login" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem
+        FlyoutItemIsVisible="False">
+        <Tab>
+            <ShellContent
+              ContentTemplate="{DataTemplate views:Register}"
+              Route="Register" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem
+        Title="Dashboard"
+        Icon="home.png">
+        <Tab>
+            <ShellContent   
+               ContentTemplate="{DataTemplate views:Dashboard}"
+               Route="Dashboard" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem
+     Title="Member"
+     Icon="member.png">
+        <Tab
+            Icon="members.png"
+            Title="Add Member">
+            <ShellContent   
+            ContentTemplate="{DataTemplate views:AddMember}"
+            Route="AddMember" />
+        </Tab>
+        <Tab 
+            Icon="member.png"
+            Title="View Members">
+            <ShellContent   
+             ContentTemplate="{DataTemplate views:ViewMember}"
+             Route="ViewMember" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem
+     Title="Account"
+     Icon="accounts.png">
+        <Tab
+            Icon="accounts.png"
+            Title="Add Account">
+            <ShellContent   
+            ContentTemplate="{DataTemplate views:AddMemberAccount}"
+            Route="AddMemberAccount" />
+        </Tab>
+        <Tab 
+            Icon="accounts.png"
+            Title="View Account">
+            <ShellContent   
+             ContentTemplate="{DataTemplate views:ViewMemberAccount}"
+             Route="ViewMemberAccount" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem
+     Title="Saving"
+     Icon="savings.png">
+        <Tab
+            Icon="savings.png"
+            Title="Add Saving">
+            <ShellContent   
+            ContentTemplate="{DataTemplate views:AddMemberSavings}"
+            Route="AddMemberSavings" />
+        </Tab>
+        <Tab 
+            Icon="savings.png"
+            Title="View Savings">
+            <ShellContent   
+             ContentTemplate="{DataTemplate views:ViewMemberSavings}"
+             Route="ViewMemberSavings" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem
+     Title="Withdrawal"
+     Icon="withdrawals.png">
+        <Tab
+            Icon="withdrawals.png"
+            Title="Add Withdrawal">
+            <ShellContent   
+            ContentTemplate="{DataTemplate views:AddMemberWithdrawal}"
+            Route="AddMemberWithdrawal" />
+        </Tab>
+        <Tab 
+            Icon="withdrawals.png"
+            Title="View Withdrawal">
+            <ShellContent   
+             ContentTemplate="{DataTemplate views:ViewMemberWithdrawal}"
+             Route="ViewMemberWithdrawal" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem
+     Title="Summary"
+     Icon="summary.png">
+        <Tab>
+            <ShellContent   
+        ContentTemplate="{DataTemplate views:AccountSummary}"
+        Route="AccountSummary" />
+        </Tab>
+
+    </FlyoutItem>
+</Shell>

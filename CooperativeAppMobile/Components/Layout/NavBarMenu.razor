@@ -1,0 +1,63 @@
+﻿@* iv class="top-row ps-3 navbar navbar-dark">
+     <div class="container-fluid">
+     <a class="navbar-brand" href="">CooperativeAppMobile</a>
+     </div>
+     </div>
+     <input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+     <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+     <nav class="flex-column">
+     <div class="nav-item px-3">
+     <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+     <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+     </NavLink>
+     </div>
+     <div class="nav-item px-3">
+     <NavLink class="nav-link" href="counter">
+     <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+     </NavLink>
+     </div>
+     <div class="nav-item px-3">
+     <NavLink class="nav-link" href="weather">
+     <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+     </NavLink>
+     </div>
+     <div class="nav-item px-3">
+     <NavLink class="nav-link" href="add-member">
+     <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Add Member
+     </NavLink>
+     </div>
+     </nav>
+     </div>
+     *@
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" style="background-color:#FFF !important; margin-left: -1600px;
+     margin-right: -1600px; background-image:url(/images/bgtop.png); background-repeat:repeat; " id="navbarBlur">
+    <div class="container-fluid py-2 px-3 hide-me">
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+            <div class="ms-md-auto pe-md-3 d-flex justify-content-end">
+            </div>
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item d-flex align-items-center">
+                    <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div>
+                            <i class="fa fa-bell cursor-pointer"></i>
+                            <span class="badge" style="background-color: #D81B60 !important">0</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                    <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                        <div class="sidenav-toggler-inner">
+                            <i class="sidenav-toggler-line"></i>
+                            <i class="sidenav-toggler-line"></i>
+                            <i class="sidenav-toggler-line"></i>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item px-3 d-flex align-items-center"></li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+</nav>

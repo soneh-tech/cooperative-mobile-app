@@ -1,0 +1,87 @@
+﻿@page "/add-member-account"
+<div class="content" style="margin-top: 10px;">
+    <div class="card print-me" style="padding: 20px !important">
+        <div class="col-lg-12 mt-1 col-md-6">
+            <div class="card h-100">
+                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-3 pb-1">
+                    <h4 class="text-white text-capitalize ps-2"><i class="fa fa-credit-card" style="color: #fff"></i>&nbsp; ADD NEW MEMBER ACCOUNT</h4>
+                </div>
+                <div class="card-body p-3">
+                    <div style="text-align: center">
+                        <label ID="Messagelabel" ForeColor="Red"></label>
+                    </div>
+                    <div class="card-body p-3 pb-0">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Member Name (Select from the list): &nbsp;<span class="req">*</span></label>
+                                    <span></span>
+                                    <input class="form-control" placeholder="Search member by name/number" />
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Account Type: &nbsp;<span class="req">*</span></label>
+                                    <span></span>
+                                    <select class="form-control"></select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Account Name: &nbsp;<span class="req">*</span></label>
+                                    <span ID="span4" ForeColor="Red" SetFocusOnError="true" EnableClientScript="true" ControlToValidate="txtAccountName" Display="Dynamic"></span>
+                                    <input ID="txtAccountName" AutoComplete="off" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Account Number: &nbsp;<span class="req">*</span></label>
+                                    <span></span>
+                                    <input class="form-control">
+                                    <HiddenField ID="hfUserAccountNo" />
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>BVN Number: &nbsp;</label>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Date Opened: &nbsp;<span class="req">*</span></label>
+                                    <span></span>
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Initial Deposit: &nbsp;<span class="req">*</span></label>
+                                    <span></span>
+                                    <input ID="txtInitialDeposit" AutoComplete="off" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <button class="btn btn-success">Submit</button>&nbsp;&nbsp;
+                                    <button class="btn btn-warning">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

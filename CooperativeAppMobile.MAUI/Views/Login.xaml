@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CooperativeAppMobile.MAUI.Views.Login"
+             xmlns:entry="clr-namespace:CooperativeAppMobile.MAUI.Helpers"
+             Shell.NavBarIsVisible="False"
+             Padding="20">
+    <ScrollView
+        VerticalScrollBarVisibility="Never"
+        HorizontalScrollBarVisibility="Never">
+        <Grid>
+            <ActivityIndicator IsRunning="False" WidthRequest="50"
+                               HeightRequest="50" IsVisible="False"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               x:Name="activityInd"/>
+            <VerticalStackLayout
+                x:Name="body"
+                IsVisible="True"
+            VerticalOptions="Center"
+            Spacing="20">
+            <VerticalStackLayout
+                Margin="0,0,0,40">
+                <Image Source="logo.png" Aspect="AspectFit"/>
+                <Label Text="Queens MPCS" HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       TextColor="{StaticResource Primary}"/>
+            </VerticalStackLayout>
+            <Frame
+                        BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                        Padding="10,2" CornerRadius="10">
+                <StackLayout Orientation="Horizontal"
+                                     Spacing="20">
+                    <Image WidthRequest="20" Source="user.png" Aspect="AspectFit"/>
+                    <entry:BorderlessEntry
+                        x:Name="txt_user"
+                        Text=""
+                                FontSize="Small"
+                                HorizontalOptions="FillAndExpand"
+                                PlaceholderColor="DarkGray"
+                                Placeholder="Username or Phone Number"/>
+                </StackLayout>
+            </Frame>
+            <Frame
+                         BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                         Padding="10,2" CornerRadius="10">
+                <StackLayout Orientation="Horizontal"
+                                     Spacing="20">
+                    <Image WidthRequest="20" Source="password.png" Aspect="AspectFit"/>
+                    <entry:BorderlessEntry
+                        x:Name="txt_pass"
+                        Text=""
+                                FontSize="Small"
+                                HorizontalOptions="FillAndExpand"
+                                PlaceholderColor="DarkGray"
+                                IsPassword="True"
+                                Placeholder="Password"/>
+                </StackLayout>
+            </Frame>
+            <HorizontalStackLayout 
+                Margin="0,-10,0,0"
+                Spacing="20">
+                <Switch x:Name="chk_remember"/>
+                <Label
+                    VerticalOptions="Center"
+                    Text="Remember me"/>
+            </HorizontalStackLayout>
+                <HorizontalStackLayout >
+                    <Label
+                        HorizontalOptions="Center"
+                         HorizontalTextAlignment="Center"
+                        x:Name="lbl_error"
+                        Text=""
+                        TextColor="Red"
+                        IsVisible="False"/>
+                </HorizontalStackLayout>
+                <Button 
+                Clicked="Login_Clicked"
+                Margin="0,20,0,0"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        FontSize="Subtitle"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource White}"
+                        BackgroundColor="{StaticResource Primary}"
+                        Text="Log In"/>
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="20">
+                <Label Text="Don't have an account?"/>
+                    <Label Text="Create one now" FontAttributes="Bold" TextColor="{StaticResource Primary}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Register_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+          
+        </VerticalStackLayout>
+        <HorizontalStackLayout
+            IsVisible="True"
+            x:Name="footer"
+            HorizontalOptions="Center"
+            VerticalOptions="End">
+                <Label Text="Copyright ©"/>
+                <Label Text=" QUEENS MPCS" FontAttributes="Bold" TextColor="{StaticResource MidnightBlue}"/>
+                <Label Text=" All Rights Reserved."/>
+            </HorizontalStackLayout>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,357 @@
+﻿@page "/add-member"
+@* @page "/" *@
+
+<div class="content" style="margin-top: 10px;">
+    <div class="card h-100 print-me" style="padding: 20px !important">
+        <div class="col-lg-12 mt-1 col-md-6">
+            <div class="card h-100">
+                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-3 pb-1">
+                    <h4 class="text-white text-capitalize ps-2"><i class="fa fa-users" style="color: #fff"></i>&nbsp;ADD/EDIT NEW MEMBER&#39; </h4>
+                </div>
+                <div class="card-body p-3">
+                    <div style="text-align: center">
+                        <label></label>
+                    </div>
+                    <div class="card-body px-0 pb-2">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div style="color: #D81B60 !important; padding: 0px 7px !important; ">
+                                    <h4 style="color:#d63384">SECTION A:: BIODATA  INFORMATION</h4>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>First Name <span class="req">*</span></label>
+                                    <span></span>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Last Name <span class="req">*</span></label>
+                                    <span></span>
+                                    <input ID="txtLastName" AutoComplete="off" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>NIN Number </label>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Date of Birth <span class="req">*</span></label>
+                                    <span></span>
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Gender <span class="req">*</span></label>
+                                    <br/>
+                                    <input type="radio" name="rd_gender" /> Male &nbsp;&nbsp;
+                                    <input type="radio" name="rd_gender" /> Female
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Marital Status <span class="req">*</span></label>
+                                    <br />
+                                    <input type="radio" name="rd_marital" /> Married &nbsp;&nbsp;
+                                    <input type="radio" name="rd_marital" /> Single
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div style="color: #D81B60 !important; padding: 0px 7px !important; ">
+                                    <h4 style="color:#d63384">SECTION B:: ADDRESS & CONTACT INFORMATION</h4>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Address</label>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>City <span class="req">*</span></label>
+                                    <span></span>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>State Of Origin </label>
+                                    <select class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Nationality </label>
+                                    <select class="form-control">
+                                        <option selected>Select Nationality</option>
+                                        <option>NIGERIAN</option>
+                                        <option>NON NIGERIAN</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Mobile <span class="req">*</span></label>
+                                    <span></span>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Email</label>
+                                    <span></span>
+                                    <div>
+                                        <div>
+                                            <input type="email" class="form-control">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div style="color: #D81B60 !important; padding: 0px 7px !important; ">
+                                    <h4 style="color:#d63384">SECTION C:: OTHER DETAILS</h4>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Photo </label>
+                                    <input type="file">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Signature Image </label>
+                                    <input type="file">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Introduced By </label>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Next of Kin <span class="req">*</span></label>
+                                    <span></span>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Next Kin Address <span class="req">*</span></label>
+                                    <span </span>
+                                    <textarea class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Relationship <span class="req">*</span></label>
+                                    <span></span>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Next Kin Phone Number <span class="req">*</span></label>
+                                    <span></span>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Accept Policy </label>
+                                    <br />
+                                    <input type="radio" name="rd_policy" /> Yes &nbsp;&nbsp;
+                                    <input type="radio" name="rd_policy" /> No
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="QueensMPCSBank">
+                            <div class="col-sm-12">
+                                <div style="color: #D81B60 !important; padding: 0px 7px !important;">
+                                    <h4 style="color: #d63384">&nbsp; SECTION D:: QUEENS MPCS ACCOUNT INFORMATION</h4>
+                                    <hr />
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Member Number/Login ID <span class="req">*</span></label>
+                                    <span></span>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Password  <span class="req">*</span></label>
+                                    <span></span>
+                                    <input class="form-control">
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Account Type (For additional Accounts, contact Sales Rep): &nbsp;<span class="req">*</span></label>
+                                    <span ></span>
+                                    <select class="form-control" ></select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Account Name: &nbsp;<span class="req">*</span></label>
+                                    <span ></span>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Account Number: &nbsp;<span class="req">*</span></label>
+                                    <span></span>
+                                    <input  class="form-control">
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Referal Code </label>
+                                    <input placeholder="Referal Code or Leave Blank" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row" id="CommercialBank">
+                            <div class="col-sm-12">
+                                <div style="color: #D81B60 !important; padding: 0px 7px !important; ">
+                                    <h4 style="color:#d63384">SECTION E:: COMMERCIAL BANK DETAILS</h4>
+                                    <hr />
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Bank Name <span class="req">*</span></label>
+                                    <span ></span>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Bank Account Name <span class="req">*</span></label>
+                                    <span ></span>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>Bank Account Number <span class="req">*</span></label>
+                                    <span></span>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-3">
+                                <div class="form-group mb-3">
+                                    <label>BVN Number: &nbsp;</label>
+                                    <input class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card-body px-0 pb-2">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div style="background-color: #D81B60 !important; padding: 2px 7px !important; margin-top:30px !important;">
+                                        <h4 style="color: #FFF">&nbsp;MANAGEMENT APPROVAL PANEL</h4>
+
+                                    </div>
+                                    <hr />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="form-group mb-3">
+                                        <label>Management Approval </label>
+                                        <select class="form-control">
+                                            <option Selected="False" Value="">Select Approval Status</option>
+                                            <option>Approved</option>
+                                            <option>Rejected</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group mb-3">
+                                        <label>Member Status </label>
+                                        <select class="form-control">
+                                            <option Value="Active" Selected="True">&nbsp;Active&nbsp;&nbsp;</option>
+                                            <option Value="Inactive">Inactive&nbsp;</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <button class="btn btn-success">Submit</button> &nbsp;
+                                    <button class="btn btn-warning">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

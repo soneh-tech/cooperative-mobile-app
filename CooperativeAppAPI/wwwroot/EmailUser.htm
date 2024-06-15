@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link href="{WebsiteURL}/Content/bootstrap.css" rel="stylesheet" />
+    <link href="{WebsiteURL}/assets/css/material-dashboard.css" rel="stylesheet" />
+    <style>
+        #wrapper p {
+            font-family: Verdana;
+            font-size: 13px;
+        }
+
+        #wrapper h3 {
+            font-family: Verdana;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        #wrapper h6 {
+            font-family: Verdana;
+            font-size: 13px;
+        }
+
+        #wrapper h5 {
+            margin-bottom: 10px;
+            margin-top: 35px;
+        }
+
+        .title {
+            color: #903278;
+            font-weight: bold;
+            font-family: Verdana;
+            font-size: 22px;
+        }
+
+        .heads {
+            font-size: 16px;
+            font-family: Verdana;
+            font-weight: 600;
+        }
+
+        .head_info {
+            font-size: 16px;
+            font-family: Verdana;
+            padding-left: 5em;
+        }
+
+        table {
+            margin-bottom: 30px;
+        }
+
+        .foot {
+            background-color: #4061A3;
+            padding: 4px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+            .foot a {
+                color: #fff;
+            }
+    </style>
+</head>
+<body style="background-color:#fff;">
+    <div class="container" id="wrapper" style="background-color:#fff;padding:10px;">
+        <br />
+        <div id="banner-wrapper" class="flexbox jst algn-center" style="background-color: #4061A3; color:#fff;">
+            <div class="desc">
+                <h3>Hello, <span id="txtFullname">{EmployeeName}</span></h3>
+
+                <h1 style="font-weight: bold; white-space: nowrap;">Welcome To {AppName}</h1>
+
+                <p>A One-Stop Platform for managing all your Co-operative and investment processes and operations.</p>
+            </div>
+
+            <div>
+                <img src="{WebsiteURL}/images/b-bg.png" alt="Banner Background Image" />
+            </div>
+
+        </div> &nbsp;<br /><br />
+      
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="title"> {Title}</h3>
+                <br />
+
+                <p>Kindly save the following details for future use in accessing the Cooperative Management System. </p>
+                <br />
+                <hr />
+                <table>
+                    <caption>LOGIN ACCESS DETAILS</caption>
+
+                    <tr>
+                        <td class="heads"> UserId:</td>
+                        <td class="head_info"> {EmployeeNumber}</td>
+
+                    </tr>
+                    <tr>
+                        <td class="heads"> Password:</td>
+                        <td class="head_info"> {Password}</td>
+
+                    </tr>
+                    <tr>
+                        <td class="heads"> Login URL:</td>
+                        <td class="head_info"><a href="{WebsiteURL}">{WebsiteURL}</a></td>
+                    </tr>
+
+                </table>
+
+                <table>
+                    <caption>MEANS OF NOTIFICATIONS</caption>
+                    <tr>
+
+                        <td> </td>
+                        <td></td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="heads"> Email:</td>
+                        <td class="head_info"> {Email}</td>
+
+                    </tr>
+                    <tr>
+                        <td class="heads"> Mobile Number:</td>
+                        <td class="head_info"> {MobileNo}</td>
+
+                    </tr>
+
+                </table>
+
+                <p style="text-align:left; font-weight:bold; color:red;">You are strongly advised to change your password after first time login..</p>
+
+                Thank you for using Queens MPCS Management System.
+
+                <br /><br />Sincerely,
+                <h3>
+                    <img src="{WebsiteURL}/images/logo.png" width="200" height="150" />
+
+                </h3>
+            </div>
+        </div>
+    </div>
+    <script src="{WebsiteURL}/Scripts/bootstrap.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="//www.queensmpcs.com/Content/bootstrap.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="//www.queensmpcs.com/assets/css/material-dashboard.css?v=3.0.2" rel="stylesheet" />
+    <script src="//www.queensmpcs.com/js/jquery-1.10.0.min.js"></script>
+    
+    <script src="//www.queensmpcs.com/js/kitfontawesome.js"></script>
+    <title></title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+       <!--<img src="//www.queensmpcs.com/images/logo.png" width="120" height="130" />-->
+    
+    <style>
+        div.container {
+            background-color: #fff;
+        }
+        #email {
+            padding-bottom: 30px;
+            padding-top: 10px;
+        }
+
+        .header_wrapper .wrapper_img {
+            text-align: center;
+        }
+
+        .header_wrapper .wrapper_link ul {
+            list-style: none;
+            background-color: #1f74b5;
+            padding: 3px;
+        }
+
+            .header_wrapper .wrapper_link ul li {
+                padding: 0px 10px 0px 10px;
+                background-color: inherit;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 600;
+                display: inline-block;
+            }
+
+                .header_wrapper .wrapper_link ul li a {
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 600;
+                    display: inline-block;
+                }
+
+        .content_wrapper .wrapper_details {
+            margin-top: 30px;
+        }
+
+            .content_wrapper .wrapper_details h5 {
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .content_wrapper .wrapper_details p {
+                font-weight: 400;
+                font-size: 14px;
+            }
+
+            .content_wrapper .wrapper_details span {
+                font-weight: 700;
+            }
+
+            .content_wrapper .wrapper_details ul {
+                list-style: circle;
+            }
+
+                .content_wrapper .wrapper_details ul li {
+                    font-weight: 400;
+                    font-size: 14px;
+                }
+
+        .wrapper_details .showcase img {
+            margin: 10px;
+        }
+
+
+        table {
+            margin-bottom: 30px;
+            border: none;
+            border-style: none;
+            border-bottom-style: none;
+            border-bottom: none;
+            border-top-style: none;
+            border-top: none;
+            text-align: left;
+            text-align: left;
+        }
+
+            table td {
+                border: none;
+                border-style: none;
+                border-bottom-style: none;
+                border-bottom: none;
+                border-top-style: none;
+                border-top: none;
+                text-align: left;
+            }
+
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+            .row:before,
+            .row:after {
+                display: table;
+                content: " ";
+            }
+
+            .row:after {
+                clear: both;
+            }
+
+            .row:before,
+            .row:after {
+                display: table;
+                content: " ";
+            }
+
+            .row:after {
+                clear: both;
+            }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 970px;
+            }
+
+            .col-md-1,
+            .col-md-2,
+            .col-md-3,
+            .col-md-4,
+            .col-md-5,
+            .col-md-6,
+            .col-md-7,
+            .col-md-8,
+            .col-md-9,
+            .col-md-10,
+            .col-md-11 {
+                float: left;
+            }
+
+            .col-md-1 {
+                width: 8.333333333333332%;
+            }
+
+            .col-md-2 {
+                width: 16.666666666666664%;
+            }
+
+            .col-md-3 {
+                width: 25%;
+            }
+
+            .col-md-4 {
+                width: 33.33333333333333%;
+            }
+
+            .col-md-5 {
+                width: 41.66666666666667%;
+            }
+
+            .col-md-6 {
+                width: 50%;
+            }
+
+            .col-md-7 {
+                width: 58.333333333333336%;
+            }
+
+            .col-md-8 {
+                width: 66.66666666666666%;
+            }
+
+            .col-md-9 {
+                width: 75%;
+            }
+
+            .col-md-10 {
+                width: 83.33333333333334%;
+            }
+
+            .col-md-11 {
+                width: 91.66666666666666%;
+            }
+
+            .col-md-12 {
+                width: 100%;
+            }
+        }
+            .btn-pri {
+                font-size: 12px;
+                line-height: 15px;
+                color: #ffffff;
+                display: inline-block;
+                border: none;
+                padding: 15px 40px;
+                background-color: #21A1C6;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                text-decoration: none;
+                cursor: pointer;
+                -webkit-box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, 0.2);
+                -moz-box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, 0.2);
+                box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, 0.2);
+                -webkit-transition: 0.2s box-shadow ease-out;
+                transition: 0.2s box-shadow ease-out;
+                -moz-border-radius: 5px;
+                -webkit--radius: 5px;
+                border-radius: 5px;
+            }
+
+                .btn-pri:hover {
+                    -webkit-box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2);
+                    -moz-box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2);
+                    box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2);
+                    color: #fff;
+                }
+
+            .btn-primary {
+                font-size: 12px;
+                line-height: 10px;
+                color: #ffffff;
+                display: inline-block;
+                border: none;
+                padding: 15px 20px;
+                background-color: #21A1C6;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                text-decoration: none;
+                cursor: pointer;
+                -webkit-box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, 0.2);
+                -moz-box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, 0.2);
+                box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, 0.2);
+                -webkit-transition: 0.2s box-shadow ease-out;
+                transition: 0.2s box-shadow ease-out;
+                -moz-border-radius: 5px;
+                -webkit--radius: 5px;
+                border-radius: 5px;
+            }
+
+                .btn-primary:hover {
+                    -webkit-box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2);
+                    -moz-box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2);
+                    box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2);
+                    color: #fff;
+                }
+
+                .btn-primary.alt {
+                    background-color: #EFB742;
+                }
+        #order .order {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+            #order .order h4 {
+                font-weight: 700;
+            }
+
+            #order .order .tab-wrap {
+                width: 100%;
+            }
+
+            #order .order .order-taba {
+                width: 100%;
+                overflow: scroll;
+                padding: 20px 20px;
+                -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+                -moz-border-radius: 0 10px 10px 10px;
+                -webkit--radius: 0 10px 10px 10px;
+                border-radius: 0 10px 10px 10px;
+            }
+
+                #order .order .order-taba .sim-item {
+                    background: rgba(0, 0, 0, 0.01);
+                    padding: 10px;
+                    padding-top: 0;
+                    margin-bottom: 20px;
+                    -moz-border-radius: 10px;
+                    -webkit--radius: 10px;
+                    border-radius: 10px;
+                }
+
+            #order .order .order-tab .title {
+                display: inline-block;
+                background: #21A1C6;
+                color: #fff;
+                padding: 10px;
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-size: 13px;
+                font-weight: 700;
+            }
+
+            #order .order .cart {
+                width: 30%;
+                -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+                -moz-border-radius: 10px;
+                -webkit--radius: 10px;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+
+        .auto-style1 {
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container" id="wrapper">
+        
+
+        <div id="email">
+            <div class="container">
+                <section class="header_wrapper">
+                    <div class="wrapper_img">
+                        <img src="//www.queensmpcs.com/images/logo.png" alt="" height="80" class="img-responsive" />
+                    </div>
+                    <br />
+                </section>
+                <section class="content_wrapper">
+                    <div class="wrapper_details">
+                        <p style="color: rgb(85, 85, 85); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; margin: 0px 0px 30px; font-size: 18px; line-height: 15px;">
+                            <h4> Hello <b style="font-size: 16px; color: rgb(0, 130, 154); font-weight: bold;">{MemberName}</b>!
+                                </h4></p>
+                        <p style="color: rgb(85, 85, 85); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; margin: 0px 0px 10px; font-size: 15px; line-height: 20px;">
+                            Please click the link below to verify your email address and explicitly consent to the terms of use.
+                        </p>
+                        <div style="color: rgb(85, 85, 85); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; margin-top: 30px; margin-bottom: 30px; padding: 0px; border: none; outline: none; list-style: none;">
+                            <a href="{VerifyCode}" mc:disable-tracking="" style="margin-top: 0px; margin-bottom: 0px; padding: 0px; border: medium solid rgb(59, 183, 94); outline: none; list-style: none; background-color: rgb(59, 183, 94); color: rgb(255, 255, 255); display: inline-block; font-size: 13px; font-weight: bold; line-height: 36px; text-align: center; text-decoration: none; width: 358px; border-radius: 5px;" target="_blank">VERIFY MY EMAIL ADDRESS</a>
+                        </div>
+
+                        <p style="color: rgb(85, 85, 85); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; margin: 0px 0px 10px; font-size: 15px; line-height: 20px;">
+                            If the above link does not work, please copy-and-paste the following URL into an open web browser to complete the verification process: <br />
+                            <span>  {VerifyCode}  </span>
+                        </p>
+
+                        <p style="color: rgb(85, 85, 85); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; margin: 0px 0px 10px; font-size: 15px; line-height: 20px;">
+                            Once you click the link, your email address will be instantly verified and there is no further action required by you.
+                            </p>
+                        <p style="color: rgb(85, 85, 85); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; margin: 0px 0px 10px; font-size: 15px; line-height: 20px;">
+                            PS: If you did not initiate this request, reply to this email or write to<span>&nbsp;</span><a href="mailto:info@queensmpcs.com" style="color: rgb(0, 110, 209);" target="_blank"><span class="clickable ClickableEmail inactive" email="info@queensmpcs.com" style="border-color: rgb(51, 51, 51); border-style: dotted; border-width: 0px 0px 1px; cursor: pointer;">info@queensmpcs.com</span></a><span>&nbsp;</span>so we can look into a possible attempt to breach your account.
+                        </p>
+
+
+                    </div>                
+
+                    <hr />
+
+                    <a href="//www.queensmpcs.com">Visit our website </a> | <a href="//www.queensmpcs.com/Login">log in to your account</a>  | <a href="//www.queensmpcs.com/ClientArea/SupportTickets.aspx">get support</a>
+                    <br /> Copyright © 2022 Queens MPCS, All rights reserved. 
+                    <div style="border-top:3px solid #22BCE5; padding-bottom:4px; margin-top:5px;">&nbsp;</div>
+                </section>
+    </div>
+        </div>
+       
+        </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CooperativeAppMobile.MAUI.Views.AddMemberSavings"
+             xmlns:entry="clr-namespace:CooperativeAppMobile.MAUI.Helpers"
+             Title="Queens MPCS"
+             Padding="20"
+         Shell.BackgroundColor="{StaticResource Primary}"
+         Shell.TitleColor="{StaticResource White}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView
+     VerticalScrollBarVisibility="Never"
+     HorizontalScrollBarVisibility="Never">
+        <Grid>
+            <ActivityIndicator IsRunning="False" WidthRequest="50"
+                     HeightRequest="50" IsVisible="False"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     x:Name="activityInd"/>
+            <VerticalStackLayout
+                x:Name="body"
+         VerticalOptions="Start"
+         Spacing="20">
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Member Name(Select from the list)"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Vertical">
+                            <entry:BorderlessEntry
+                                 x:Name="txt_member"
+                                 Text=""
+                                 TextChanged="txt_member_TextChanged"
+                                 Unfocused="txt_member_Unfocused"
+                                 Focused="txt_member_Focused"
+                              FontSize="Small"
+                              HorizontalOptions="FillAndExpand"
+                              PlaceholderColor="DarkGray"
+                              Placeholder="Search Member by Name/Number"/>
+                                                <ListView x:Name="dropdownListView"
+                                       IsVisible="False"
+                               ItemsSource="{Binding FilteredMembers}"
+                               MaximumHeightRequest="200"
+                               SelectionMode="Single"
+                               ItemSelected="OnItemSelected">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextCell Text="{Binding}" />
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Account Type"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessPicker
+                                x:Name="drp_account_type"
+                             FontSize="Small"
+                              SelectedIndexChanged="OnAccountTypeSelected"
+                             HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Select Previous/Current Date"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessDatePicker
+                                x:Name="drp_previous_current_date"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <Border
+                    IsVisible="False"
+                    Stroke="Transparent"
+                    x:Name="savings_detail_box">
+                    <VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Account Number"/>
+                                <Label Text="*" TextColor="Red"/>
+                            </HorizontalStackLayout>
+                            <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                                <StackLayout Orientation="Vertical">
+                                    <entry:BorderlessEntry
+                                 x:Name="txt_account_number"
+                                 Text="{Binding AccountNumber}"
+                              FontSize="Small"
+                              HorizontalOptions="FillAndExpand"
+                              PlaceholderColor="DarkGray"
+                                    IsEnabled="False"
+                              Placeholder="Account Number"/>
+                                </StackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Account Name"/>
+                            </HorizontalStackLayout>
+                            <Frame
+                              BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                              BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                              Padding="10,2" CornerRadius="10">
+                                <StackLayout Orientation="Vertical">
+                                    <entry:BorderlessEntry
+                                      x:Name="txt_account_name"
+                                      Text="{Binding AccountName}"
+                                   FontSize="Small"
+                                   HorizontalOptions="FillAndExpand"
+                                   PlaceholderColor="DarkGray"
+                                          IsEnabled="False"
+                                   Placeholder="Account Name"/>
+                                </StackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Deposit Amount"/>
+                                <Label Text="*" TextColor="Red"/>
+                            </HorizontalStackLayout>
+                            <Frame
+                                  BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                                  BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                                  Padding="10,2" CornerRadius="10">
+                                <StackLayout Orientation="Vertical">
+                                    <entry:BorderlessEntry
+                                      x:Name="txt_deposit_amount"
+                                      Text=""
+                                   FontSize="Small"
+                                   HorizontalOptions="FillAndExpand"
+                                   PlaceholderColor="DarkGray"
+                                   Placeholder="Amount"/>   
+                                </StackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Transaction Date"/>
+                            </HorizontalStackLayout>
+                            <Frame
+                                 BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                                 BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                                 Padding="10,2" CornerRadius="10">
+                                <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                                    <entry:BorderlessDatePicker
+                                    x:Name="drp_transaction_date"
+                                     FontSize="Small"
+                                     HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Status"/>
+                                <Label Text="*" TextColor="Red"/>
+                            </HorizontalStackLayout>
+                            <Frame
+                                   BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                                   BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                                   Padding="10,2" CornerRadius="10">
+                                <StackLayout Orientation="Horizontal"
+                                      Spacing="20">
+                                    <RadioButton x:Name="rd_pending" Content="Pending" GroupName="rd_status"/>
+                                    <RadioButton x:Name="rd_confirmed" Content="Confirmed" GroupName="rd_status"/>
+                                </StackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+                <HorizontalStackLayout
+                     HorizontalOptions="Center"
+                     Margin="0,0,0,0"
+                     Spacing="20">
+                    <Button 
+                          HeightRequest="50"
+                          WidthRequest="120"
+                          CornerRadius="10"
+                          FontSize="Subtitle"
+                          FontAttributes="Bold"
+                          TextColor="{StaticResource White}"
+                          BackgroundColor="{StaticResource Primary}"
+                        x:Name="btn_submit"
+                        Clicked="btn_submit_Clicked"
+                          Text="Pay"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CooperativeAppMobile.MAUI.Views.Register"
+             xmlns:entry="clr-namespace:CooperativeAppMobile.MAUI.Helpers"
+            Shell.NavBarIsVisible="False"
+          Padding="20">
+    <ScrollView
+     VerticalScrollBarVisibility="Never"
+     HorizontalScrollBarVisibility="Never">
+        <Grid>
+            <VerticalStackLayout
+         VerticalOptions="Center"
+         Spacing="20">
+                <VerticalStackLayout
+             Margin="0,0,0,0">
+                    <Image Source="logo.png" Aspect="AspectFit"/>
+                    <Label Text="Queens MPCS" HorizontalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    FontSize="Subtitle"
+                    TextColor="{StaticResource Primary}"/>
+                </VerticalStackLayout>
+                <Label Text="Create a secure account"
+                       FontSize="Subtitle"
+                       TextColor="DarkGray"
+                       HorizontalTextAlignment="Center"/>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="First Name"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="First Name (Required)"/>
+                    </StackLayout>
+                </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Last Name"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Last Name (Required)"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Email Address"/>
+                      
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Email Address (Optional)"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Phone Number"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Phone Number (Required)"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Member Number/Login ID"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Text="QC00000117"
+                             IsEnabled="False"
+                             Placeholder="Member Number/Login ID"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Password"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Text="Me@mB4R117"
+                             Placeholder="Password"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessPicker
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Referral Code/Phone Number"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Referral Code/Phone Number (Optional)"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="How Did You Hear About Us?"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessPicker
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <Button 
+             Clicked="Register_Clicked"
+             Margin="0,20,0,0"
+                     HeightRequest="50"
+                     CornerRadius="10"
+                     FontSize="Subtitle"
+                     FontAttributes="Bold"
+                     TextColor="{StaticResource White}"
+                     BackgroundColor="{StaticResource Primary}"
+                     Text="Create Account"/>
+                <HorizontalStackLayout
+             HorizontalOptions="Center"
+             Spacing="20">
+                    <Label Text="Already have an account?"/>
+                    <Label Text="Login" FontAttributes="Bold" TextColor="{StaticResource Primary}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Login_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

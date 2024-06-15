@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CooperativeAppMobile.MAUI.Views.AddMember"
+             xmlns:entry="clr-namespace:CooperativeAppMobile.MAUI.Helpers"
+             Title="Queens MPCS"
+             Padding="20"
+             Shell.BackgroundColor="{StaticResource Primary}"
+             Shell.TitleColor="{StaticResource White}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView
+     VerticalScrollBarVisibility="Never"
+     HorizontalScrollBarVisibility="Never">
+        <Grid>
+            <ActivityIndicator IsRunning="False" WidthRequest="50"
+                     HeightRequest="50" IsVisible="False"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     x:Name="activityInd"/>
+            <VerticalStackLayout
+                x:Name="body"
+         VerticalOptions="Center"
+         Spacing="20">
+                <Label Text="SECTION A: BIODATA INFORMATION"
+                       FontSize="Caption"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource Primary}"/>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="First Name"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_first_name"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="First Name (Required)"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Last Name"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_last_name"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Last Name (Required)"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="NIN"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_nin"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="NIN NUmber"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Date of Birth"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessDatePicker
+                                x:Name="drp_dob"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Gender"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <RadioButton x:Name="rd_male" Content="Male" GroupName="rd_gender"/>
+                            <RadioButton x:Name="rd_female" Content="Female" GroupName="rd_gender"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Marital Status"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <RadioButton x:Name="rd_married" Content="Married" GroupName="rd_marital"/>
+                            <RadioButton x:Name="rd_single" Content="Single" GroupName="rd_marital"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <Label Text="SECTION B: ADDRESS &amp; CONTACT INFORMATION"
+                        FontSize="Caption"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource Primary}"/>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Address"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_address"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Home Address"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="City"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_city"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="City"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="State"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessPicker
+                                x:Name="drp_state"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Nationality"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessPicker
+                                x:Name="drp_nationality"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Mobile"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_phone"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Phone Number (Required)"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Email Address"/>
+
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_email"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Email Address (Optional)"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <Label Text="SECTION C: OTHER DETAILS"
+                        FontSize="Caption"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource Primary}"/>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Photo"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                         BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                         Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                 Spacing="20">
+                            <Button x:Name="btn_picture" Text="Choose file" FontSize="Small"
+                                    BackgroundColor="{StaticResource Gray300}"/>
+                            <Label
+                                VerticalTextAlignment="Center"
+                                Text="No file Chosen"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Signature Photo"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                         BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                         Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                 Spacing="20">
+                            <Button x:Name="btn_signature" Text="Choose file" FontSize="Small"
+                                    BackgroundColor="{StaticResource Gray300}"/>
+                            <Label
+                                VerticalTextAlignment="Center"
+                                Text="No file Chosen"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Introduced By"/>
+                    </HorizontalStackLayout>
+                    <Frame
+       BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+       BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+       Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                    Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_introducer"
+               FontSize="Small"
+               HorizontalOptions="FillAndExpand"
+               PlaceholderColor="DarkGray"
+               Placeholder="Introducer Name"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Next of Kin"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                           BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                           BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                           Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                             Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_nok"
+                               FontSize="Small"
+                               HorizontalOptions="FillAndExpand"
+                               PlaceholderColor="DarkGray"
+                               Placeholder="Next of Kin (Required)"/>   
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Next of Kin Address"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                           BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                           BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                           Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                               Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_nok_address"
+                               FontSize="Small"
+                               HorizontalOptions="FillAndExpand"
+                               PlaceholderColor="DarkGray"
+                               Placeholder="Next of Kin Address (Required)"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Relationship"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                           BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                           BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                           Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                               Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_relationship"
+                               FontSize="Small"
+                               HorizontalOptions="FillAndExpand"
+                               PlaceholderColor="DarkGray"
+                               Placeholder="Relationship (Required)"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Next of Kin Number"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                           BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                           BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                           Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                               Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_nok_num"
+                               FontSize="Small"
+                               HorizontalOptions="FillAndExpand"
+                               PlaceholderColor="DarkGray"
+                               Placeholder="Next of Kin Number (Required)"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Accept Policy"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <RadioButton x:Name="rd_acceept" Content="Yes" GroupName="rd_accept"/>
+                            <RadioButton x:Name="rd_decline" Content="No" GroupName="rd_accept"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <Label Text="SECTION D: QUEENS MPCS ACCOUNT INFORMATION"
+                        FontSize="Caption"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource Primary}"/>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Member Number/Login ID"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_member_num"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Text="QC00000117"
+                             IsEnabled="False"
+                             Placeholder="Member Number/Login ID"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Password"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_password"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Text="Me@mB4R117"
+                             Placeholder="Password"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Account Type (For additional Accounts, contact Sales Rep)"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessPicker
+                                x:Name="drp_account_type"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Account Name"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_account_name"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Account Name"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Account Number"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_account_number"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Account Number"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Referral Code"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_referal_code"
+                             FontSize="Small"
+                             HorizontalOptions="FillAndExpand"
+                             PlaceholderColor="DarkGray"
+                             Placeholder="Referral Code (Optional)"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <Label Text="SECTION E: COMMERCIAL BANK DETAILS"
+                      FontSize="Caption"
+                      FontAttributes="Bold"
+                      TextColor="{StaticResource Primary}"/>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Bank Name"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_bank_name"
+                                  FontSize="Small"
+                                  HorizontalOptions="FillAndExpand"
+                                  PlaceholderColor="DarkGray"
+                                  Placeholder="Bank Name"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Bank Account Name"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_bank_account_name"
+                                  FontSize="Small"
+                                  HorizontalOptions="FillAndExpand"
+                                  PlaceholderColor="DarkGray"
+                                  Placeholder="Bank Account Name"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Bank Account Number"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_bank_account_number"
+                                  FontSize="Small"
+                                  HorizontalOptions="FillAndExpand"
+                                  PlaceholderColor="DarkGray"
+                                  Placeholder="Bank Account Number"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="BVN Number"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                  Spacing="20">
+                            <entry:BorderlessEntry
+                                x:Name="txt_bvn_number"
+                                  FontSize="Small"
+                                  HorizontalOptions="FillAndExpand"
+                                  PlaceholderColor="DarkGray"
+                                  Placeholder="BVN Number"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <Frame
+                    BackgroundColor="{StaticResource Primary}"
+                    Padding="20,5">
+                    <Label Text="MANAGEMENT APPROVAL PANEL"
+                              FontSize="Caption"
+                              FontAttributes="Bold"
+                              TextColor="{StaticResource White}"/>    
+
+                </Frame>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Management Approval"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                         BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                         Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                               Spacing="20">
+                            <entry:BorderlessPicker
+                                x:Name="drp_mgt_approval"
+                                 FontSize="Small"
+                                 HorizontalOptions="FillAndExpand"/>    
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Member Status"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+                         BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                         Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                  Spacing="20">
+                            <RadioButton x:Name="rd_active" Content="Active" GroupName="rd_status"/>
+                            <RadioButton x:Name="rd_inactive" Content="Inactive" GroupName="rd_status"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Recieve SMS"/>
+                        <Label Text="*" TextColor="Red"/>
+                    </HorizontalStackLayout>
+                    <Frame
+     BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+     BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+     Padding="10,2" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                  Spacing="20">
+                            <RadioButton x:Name="rd_sms_yes" Content="Yes" GroupName="rd_sms"/>
+                            <RadioButton x:Name="rd_sms_no" Content="No" GroupName="rd_sms"/>
+                        </StackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <HorizontalStackLayout
+                     HorizontalOptions="Center"
+                     Margin="0,0,0,0"
+                     Spacing="20">
+                    <Button 
+                          HeightRequest="50"
+                          WidthRequest="120"
+                          CornerRadius="10"
+                          FontSize="Subtitle"
+                          FontAttributes="Bold"
+                          TextColor="{StaticResource White}"
+                          BackgroundColor="{StaticResource Primary}"
+                        x:Name="btn_submit"
+                        Clicked="btn_submit_Clicked"
+                          Text="Submit"/>
+                    <Button 
+                          HeightRequest="50"
+                          WidthRequest="120"
+                          CornerRadius="10"
+                          FontSize="Subtitle"
+                          FontAttributes="Bold"
+                          TextColor="{StaticResource White}"
+                          BackgroundColor="Orange"
+                        x:Name="btn_cancel"
+                        Clicked="btn_cancel_Clicked"
+                          Text="Cancel"/>   
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

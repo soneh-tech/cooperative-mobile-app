@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CooperativeAppMobile.MAUI.Views.Dashboard"
+                     Title="Queens MPCS"
+             Padding="20"
+             BackgroundColor="{StaticResource Gray100}"
+         Shell.BackgroundColor="{StaticResource Primary}"
+         Shell.TitleColor="{StaticResource White}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Order="Secondary" x:Name="btn_logout" Clicked="btn_logout_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <ActivityIndicator
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            WidthRequest="50"
+            HeightRequest="50"
+            IsRunning="True"
+            IsVisible="True"
+            x:Name="indicator"/>
+        <VerticalStackLayout
+            IsVisible="False"
+            x:Name="items_panel"
+        Spacing="50">
+            <HorizontalStackLayout Spacing="10">
+                <Label
+                VerticalTextAlignment="End"
+                Text="Welcome back!"/>
+                <Label Text="Gunu Michaeal"
+                   FontAttributes="Bold"
+                   TextColor="Green"
+                   x:Name="txt_name"
+                   FontSize="Subtitle"/>
+            </HorizontalStackLayout>
+            <Grid
+        RowDefinitions="auto,auto,auto,auto"
+          RowSpacing="40"
+          ColumnSpacing="20"
+          ColumnDefinitions="*,*">
+                <Grid
+            Grid.Row="0"
+            Grid.Column="0">
+                    <Frame
+                HeightRequest="120">
+                        <Grid>
+                            <Label
+                    VerticalOptions="End"
+                    FontAttributes="Bold"
+                    FontSize="Caption"
+                    Text="Amount Deposited" TextColor="Green"/>
+                            <VerticalStackLayout 
+                    HorizontalOptions="End">
+                                <Label Text="Daily Deposit"
+                           FontSize="Caption"
+                           HorizontalTextAlignment="End"
+                           TextColor="{StaticResource Gray500}"/>
+                                <Label Text="$0.00"
+                               HorizontalTextAlignment="End"
+                               x:Name="txt_daily_deposit"
+                            FontSize="Small"
+                            FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                    <Border
+                Margin="-100,-135,0,0"
+                WidthRequest="50"
+                HeightRequest="50"
+                StrokeShape="RoundRectangle 10"
+                Background="Black">
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                            Opacity="0.5"
+                            Offset="5,10"/>
+                        </Border.Shadow>
+                        <Image
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Source="daily_deposit.png" Aspect="AspectFit"/>
+                    </Border>
+
+                </Grid>
+                <Grid
+            Grid.Row="0"
+            Grid.Column="1">
+                    <Frame
+                HeightRequest="120">
+                        <Grid>
+                            <Label
+                    VerticalOptions="End"
+                    FontAttributes="Bold"
+                    FontSize="Caption"
+                    Text="Total Withdrawals" TextColor="Green"/>
+                            <VerticalStackLayout 
+                    HorizontalOptions="End">
+                                <Label Text="Daily Withdrawals"
+                           FontSize="Caption"
+                           HorizontalTextAlignment="End"
+                           TextColor="{StaticResource Gray500}"/>
+                                <Label Text="$0.00"
+                               HorizontalTextAlignment="End"
+                               x:Name="txt_daily_withdrawal"
+                            FontSize="Small"
+                            FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                    <Border
+                Margin="-100,-135,0,0"
+                WidthRequest="50"
+                HeightRequest="50"
+                StrokeShape="RoundRectangle 10"
+                Background="Green">
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                            Opacity="0.5"
+                            Offset="5,10"/>
+                        </Border.Shadow>
+                        <Image
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Source="daily_withdrawal.png" Aspect="AspectFit"/>
+                    </Border>
+
+                </Grid>
+                <Grid
+     Grid.Row="1"
+     Grid.Column="0">
+                    <Frame
+         HeightRequest="120">
+                        <Grid>
+                            <Label
+             VerticalOptions="End"
+             FontAttributes="Bold"
+             FontSize="Caption"
+             Text="Amount Deposited" TextColor="Green"/>
+                            <VerticalStackLayout 
+             HorizontalOptions="End">
+                                <Label Text="Total Deposit"
+                    FontSize="Caption"
+                    HorizontalTextAlignment="End"
+                    TextColor="{StaticResource Gray500}"/>
+                                <Label Text="$0.00"
+                        HorizontalTextAlignment="End"
+                     FontSize="Small"
+                               x:Name="txt_total_deposit"
+                     FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                    <Border
+                Margin="-100,-135,0,0"
+         WidthRequest="50"
+         HeightRequest="50"
+         StrokeShape="RoundRectangle 10"
+         Background="Orange">
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                     Opacity="0.5"
+                     Offset="5,10"/>
+                        </Border.Shadow>
+                        <Image
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Source="total_deposit.png" Aspect="AspectFit"/>
+                    </Border>
+
+                </Grid>
+                <Grid
+     Grid.Row="1"
+     Grid.Column="1">
+                    <Frame
+         HeightRequest="120">
+                        <Grid>
+                            <Label
+             VerticalOptions="End"
+             FontAttributes="Bold"
+             FontSize="Caption"
+             Text="Amount Withdrawn" TextColor="Green"/>
+                            <VerticalStackLayout 
+             HorizontalOptions="End">
+                                <Label Text="Total Withdrawals"
+                    FontSize="Caption"
+                    HorizontalTextAlignment="End"
+                    TextColor="{StaticResource Gray500}"/>
+                                <Label Text="$0.00"
+                        HorizontalTextAlignment="End"
+                               x:Name="txt_total_withdrawal"
+                     FontSize="Small"
+                     FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                    <Border
+                Margin="-100,-135,0,0"
+         WidthRequest="50"
+         HeightRequest="50"
+         StrokeShape="RoundRectangle 10"
+         Background="Purple">
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                     Opacity="0.5"
+                     Offset="5,10"/>
+                        </Border.Shadow>
+                        <Image
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Source="total_withrawal.png" Aspect="AspectFit"/>
+                    </Border>
+
+                </Grid>
+                <Grid
+       Grid.Row="2"
+       Grid.Column="0">
+                    <Frame
+           HeightRequest="120">
+                        <Grid>
+                            <Label
+               VerticalOptions="End"
+               FontAttributes="Bold"
+               FontSize="Caption"
+               Text="Loan Amount" TextColor="Green"/>
+                            <VerticalStackLayout 
+               HorizontalOptions="End">
+                                <Label Text="Daily Loan"
+                      FontSize="Caption"
+                      HorizontalTextAlignment="End"
+                      TextColor="{StaticResource Gray500}"/>
+                                <Label Text="$0.00"
+                          HorizontalTextAlignment="End"
+                       FontSize="Small"
+                               x:Name="txt_daily_loan"
+                       FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                    <Border
+                Margin="-100,-135,0,0"
+           WidthRequest="50"
+           HeightRequest="50"
+           StrokeShape="RoundRectangle 10"
+           Background="Tomato">
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                       Opacity="0.5"
+                       Offset="5,10"/>
+                        </Border.Shadow>
+                        <Image
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Source="daily_loan.png" Aspect="AspectFit"/>
+                    </Border>
+
+                </Grid>
+                <Grid
+       Grid.Row="2"
+       Grid.Column="1">
+                    <Frame
+           HeightRequest="120">
+                        <Grid>
+                            <Label
+               VerticalOptions="End"
+               FontAttributes="Bold"
+               FontSize="Caption"
+               Text="Loan Amount" TextColor="Green"/>
+                            <VerticalStackLayout 
+               HorizontalOptions="End">
+                                <Label Text="Total Loan"
+                      FontSize="Caption"
+                      HorizontalTextAlignment="End"
+                      TextColor="{StaticResource Gray500}"/>
+                                <Label Text="$0.00"
+                          HorizontalTextAlignment="End"
+                               x:Name="txt_total_loan"
+                       FontSize="Small"
+                       FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                    <Border
+                Margin="-100,-135,0,0"
+           WidthRequest="50"
+           HeightRequest="50"
+           StrokeShape="RoundRectangle 10"
+           Background="Olive">
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                       Opacity="0.5"
+                       Offset="5,10"/>
+                        </Border.Shadow>
+                        <Image
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Source="total_loan.png" Aspect="AspectFit"/>
+                    </Border>
+
+                </Grid>
+                <Grid
+Grid.Row="3"
+Grid.Column="0">
+                    <Frame
+    HeightRequest="120">
+                        <Grid>
+                            <Label
+        VerticalOptions="End"
+        FontAttributes="Bold"
+        FontSize="Caption"
+        Text="+0% than Yesterday" TextColor="Green"/>
+                            <VerticalStackLayout 
+        HorizontalOptions="End">
+                                <Label Text="Daily Members"
+               FontSize="Caption"
+               HorizontalTextAlignment="End"
+               TextColor="{StaticResource Gray500}"/>
+                                <Label Text="0"
+                   HorizontalTextAlignment="End"
+                FontSize="Small"
+                               x:Name="txt_daily_member"
+                FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                    <Border
+                Margin="-100,-135,0,0"
+    WidthRequest="50"
+    HeightRequest="50"
+    StrokeShape="RoundRectangle 10"
+    Background="Blue">
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                Opacity="0.5"
+                Offset="5,10"/>
+                        </Border.Shadow>
+                        <Image
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Source="daily_members.png" Aspect="AspectFit"/>
+                    </Border>
+
+                </Grid>
+                <Grid
+Grid.Row="3"
+Grid.Column="1">
+                    <Frame
+    HeightRequest="120">
+                        <Grid>
+                            <Label
+        VerticalOptions="End"
+        FontAttributes="Bold"
+        FontSize="Caption"
+        Text="+0% than last month" TextColor="Green"/>
+                            <VerticalStackLayout 
+        HorizontalOptions="End">
+                                <Label Text="Total Members"
+               FontSize="Caption"
+               HorizontalTextAlignment="End"
+               TextColor="{StaticResource Gray500}"/>
+                                <Label Text="0"
+                   HorizontalTextAlignment="End"
+                FontSize="Small"
+                               x:Name="txt_total_members"
+                FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                    <Border
+                Margin="-100,-135,0,0"
+    WidthRequest="50"
+    HeightRequest="50"
+    StrokeShape="RoundRectangle 10"
+    Background="BurlyWood">
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                Opacity="0.5"
+                Offset="5,10"/>
+                        </Border.Shadow>
+                        <Image
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Source="total_members.png" Aspect="AspectFit"/>
+                    </Border>
+
+                </Grid>
+            </Grid>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CooperativeAppMobile.MAUI.Views.ViewMemberWithdrawal"
+             xmlns:entry="clr-namespace:CooperativeAppMobile.MAUI.Helpers"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             Title="Queens MPCS"
+             Padding="20"
+             Shell.BackgroundColor="{StaticResource Primary}"
+             Shell.TitleColor="{StaticResource White}">
+    <Shell.SearchHandler>
+        <SearchHandler SearchBoxVisibility="Collapsible"/>
+    </Shell.SearchHandler>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+    <Grid
+        RowDefinitions="auto,*">
+        <!--<VerticalStackLayout Grid.Row="0">
+                <Frame
+                   BorderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Primary}}"
+                   BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"
+                   Padding="10,2" CornerRadius="10">    
+                    <StackLayout Orientation="Horizontal"
+                    Spacing="20">
+                        <entry:BorderlessPicker
+               FontSize="Small"
+               HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+            </VerticalStackLayout>-->
+        <syncfusion:SfDataGrid
+            x:Name="dataGrid"
+            AutoGenerateColumnsMode="None"
+            GridLinesVisibility="Both"
+            HeaderGridLinesVisibility="Both"
+            ColumnWidthMode="Auto"
+            ItemsSource="">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:DataGridTextColumn
+                    MappingName=""
+                    HeaderText=""/>
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</ContentPage>
